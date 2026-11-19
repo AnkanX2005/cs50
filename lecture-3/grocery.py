@@ -11,10 +11,9 @@ def main():
         try:
             grocery_list[user_input] = grocery_list.get(user_input, 0) + 1
             user_input = input('Item: ')
-            if user_input == 'control-d':
-                break
         except EOFError:
-            pass
+            print("\nExiting the grocery list.")
+            break
 
     # Sort items alphabetically and display with counts
     for item in sorted(grocery_list):

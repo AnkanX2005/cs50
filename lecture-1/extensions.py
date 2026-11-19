@@ -18,7 +18,7 @@ def main():
     if filename.endswith(('.gif', '.jpg', '.jpeg', '.png')):
         print('image/' + filename.split('.')[-1])
     elif filename.endswith(('.pdf', '.txt', '.zip')):
-        print(filename.split('.')[-1])
+        print('document/' + filename.split('.')[-1])
     else:
         print('application/octet-stream')
 

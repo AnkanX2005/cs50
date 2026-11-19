@@ -12,20 +12,22 @@ def main():
 
 
 def fuel_percentage(fraction):
-    try:
-        x, y = map(int, fraction.split('/'))
-        while x < 0 or y <= 0 or x > y:
-            fraction = input("Fraction: ")
+    while True:
+        try:
             x, y = map(int, fraction.split('/'))
-        percentage = round((x / y) * 100)
-        if percentage <= 1:
-            return "E"
-        elif percentage >= 99:
-            return "F"
-        else:
-            return f"{percentage}%"
-    except (ValueError, ZeroDivisionError):
-        return fuel_percentage(input("Fraction: "))        
+            if y >= x >= 0 and y != 0:
+                percentage = round((x / y) * 100)
+                if percentage <= 1:
+                    return "E"
+                elif percentage >= 99:
+                    return "F"
+                else:
+                    return f"{percentage}%"
+            else:
+                fraction = input("Fraction: ")    
+        except (ValueError, ZeroDivisionError):
+            print("Invalid input. Please enter a valid fraction in the format X/Y where X is a non-negative integer and Y is a positive integer.")   
+              # this line will never be reached because the loop will either return a value or prompt the user again for input.
 
 if __name__ == "__main__":
     main()    

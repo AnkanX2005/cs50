@@ -22,12 +22,10 @@ def main():
             if item.strip().lower() in {key.strip().lower() for key in menu.keys()}:
                 total_cost += menu[next(key for key in menu.keys() if key.strip().lower() == item.strip().lower())]
                 print(f"Total: ${total_cost:.2f}")
-            if item == 'control-d':
-                break
+            
     except EOFError:
-        pass
-    else:
-        print(f"Total: ${total_cost:.2f}")
+        print("\nThank you for your order!")
+    
 
 if __name__ == "__main__":
     main()        

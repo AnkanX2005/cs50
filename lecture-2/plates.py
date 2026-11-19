@@ -29,4 +29,4 @@ def is_valid(s):
             return False
     return True
 
-main()    
+main()

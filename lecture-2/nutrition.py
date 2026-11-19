@@ -14,8 +14,7 @@ def main():
     user_input = input("Item: ").strip().lower()
     if user_input in fruits:
         print(f"Calories: {fruits[user_input]}")
-    else:
-        None
+    
 
 if __name__ == "__main__":
     main()

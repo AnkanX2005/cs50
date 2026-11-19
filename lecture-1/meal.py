@@ -7,20 +7,20 @@ Structure your program per the below, wherein convert is a function (that can be
 
 def main():
     user_input = input('What time is it? ')
-    print(convert(user_input))
+    print(convert(user_input)) if convert(user_input) else None
 
 def convert(time):
     hours, minutes = time.split(":")
     hours = int(hours)
     minutes = int(minutes)
-    if 7 <= hours < 9 or (hours == 9 and minutes == 0):
+    if 7 <= hours < 8 or (hours == 8 and minutes == 0):
         return "breakfast time"
-    elif 12 <= hours < 14 or (hours == 14 and minutes == 0):
+    elif 12 <= hours < 13 or (hours == 13 and minutes == 0):
         return "lunch time"
-    elif 18 <= hours < 20 or (hours == 20 and minutes == 0):
+    elif 18 <= hours < 19 or (hours == 19 and minutes == 0):
         return "dinner time"
     else:
-        return time
+        return  # Not time for a meal, do not output anything
 
 if __name__ == "__main__":
     main()
